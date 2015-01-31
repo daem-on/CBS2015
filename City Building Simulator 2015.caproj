@@ -50,13 +50,19 @@
         <object-type name="StreetDesigner" sid="2618971242884812">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5995107009732218" speed="5">
+                <animation framecount="1" loop="0" name="Working" pingpong="0" repeatcount="1" repeatto="0" sid="5995107009732218" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Blocked" pingpong="0" repeatcount="1" repeatto="0" sid="4561642479864426" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="Street" sid="2296256969279535">
             <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Orientation" sid="9238871138891829" type="number" />
+            </instance-variables>
             <texture />
         </object-type>
         <object-type name="StreetStart" sid="5508140206883714">
@@ -81,8 +87,11 @@
         <object-type name="HousePlacement" sid="8664033772578908">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7795682564608401" speed="5">
+                <animation framecount="1" loop="0" name="Working" pingpong="0" repeatcount="1" repeatto="0" sid="7795682564608401" speed="5">
                     <frame duration="1" hotspotX="0.472" hotspotY="0.544" />
+                </animation>
+                <animation framecount="1" loop="0" name="Bad" pingpong="0" repeatcount="1" repeatto="0" sid="8786853232014317" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
