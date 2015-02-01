@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>House</name>
+    <events>
+        <event-block sid="5307806699175483">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2290732565835065" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;house1&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5150730169988316">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="3548297461498405" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9703481135310631" type="System">
+                            <param id="0" name="Object to create">HousePlacement</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="920211148603885">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="2744064810058007" type="Mouse">
+                            <param id="0" name="Object">Street</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4309025246117685" type="HousePlacement">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block collapsed="1" sid="7913734319491927">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6097827151737034" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block collapsed="1" sid="934086696501103">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1844230507927071" type="System">
+                                            <param id="0" name="First value">mouse.Y</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Street.Y + 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="3452934995205871" type="HousePlacement">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">street.Y - 40</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="923342539774391" type="HousePlacement">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9386027291431734">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="9575993140254458" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="8365997729480488" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8306519980789601">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="6073529286900593" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="6439742287764121" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="9627094068441458">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="5943201811496493" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="5461092124994175" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="9810468279759335" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">mouse.X</param>
+                                                            <param id="3" name="Y">street.Y - 40</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="4459682609611026" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="4622021311835947" type="House">
+                                                            <param id="0" name="Animation">&quot;Top&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="6311664554072244">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8552124710892198" type="System">
+                                            <param id="0" name="First value">mouse.Y</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Street.Y + 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="7146172274378159" type="HousePlacement">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">street.Y + 50</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="1717435384059056" type="HousePlacement">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3706740543670163">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="6383919711654157" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="2382645448034612" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3576983617050854">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="8212379366706404" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="2572980416663325" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="4559270117745771">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="6032108172941132" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="1800512310800838" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="5177668146129168" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">mouse.X</param>
+                                                            <param id="3" name="Y">street.Y + 50</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="7918737344291102" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="250507968277868" type="House">
+                                                            <param id="0" name="Animation">&quot;Back&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1705901390264068">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5418024890885479" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="6967189152061964">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5747601647840487" type="System">
+                                            <param id="0" name="First value">mouse.Y</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Street.Y - 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="3759208056103384" type="HousePlacement">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">street.Y - 80</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="3861835503825143" type="HousePlacement">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4353730147349222">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="2419512494536284" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="7131206972133943" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5005163183036528">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="271111804511374" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="2329367343289943" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="5371912397723226">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="4971754204314456" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="708576641962711" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="4837038354381084" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">mouse.X</param>
+                                                            <param id="3" name="Y">street.Y - 80</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="2536843776269191" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="6099706697998961" type="House">
+                                                            <param id="0" name="Animation">&quot;Top&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block collapsed="1" sid="4635717186536607">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="2103598154348619" type="System">
+                                            <param id="0" name="First value">mouse.Y</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Street.Y - 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="1803026661750146" type="HousePlacement">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">street.Y + 10</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="6940482285944855" type="HousePlacement">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="8979054527395426">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="1889372948596364" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="6276734340967167" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2587291927256401">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="2462956824883886" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="7126902874056206" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="4280158530842463">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="1992002433449108" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="135159031715762" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="4144130122102926" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">mouse.X</param>
+                                                            <param id="3" name="Y">street.Y + 10</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="4107317686883721" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="7236113437126559" type="House">
+                                                            <param id="0" name="Animation">&quot;Back&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="3582588561335649">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5572288250296408" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block collapsed="1" sid="3120742249587627">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="642689280611111" type="System">
+                                            <param id="0" name="First value">mouse.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Street.X - 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="7081925723539062" type="HousePlacement">
+                                            <param id="0" name="X">street.X - 100</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="7077956034066889" type="HousePlacement">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3661452502240648">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="4354767751514006" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="9541878362677663" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4755540873418095">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="3140773478770791" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="3706383745638775" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="3874804544196779">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="2995782200325421" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="6664721451411986" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="9361683694527003" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">Street.X - 100</param>
+                                                            <param id="3" name="Y">mouse.y</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="2996582823942193" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="3858367106421023" type="House">
+                                                            <param id="0" name="Animation">&quot;Sideways&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block collapsed="1" sid="4457309586767287">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="2868508487834906" type="System">
+                                            <param id="0" name="First value">mouse.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Street.X - 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="8718419466818827" type="HousePlacement">
+                                            <param id="0" name="X">street.X + 50</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="6027277054049913" type="HousePlacement">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3213418313592962">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="8920938581253036" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="8714998751424113" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6660003116359339">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="7119952509919882" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="4741224003541469" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="7950515891957116">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="5464589079618485" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="9692608420585151" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="5668795860605261" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">Street.X + 50</param>
+                                                            <param id="3" name="Y">mouse.y</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="8268036737983516" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="9012915570101033" type="House">
+                                                            <param id="0" name="Animation">&quot;Other&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="7261927949296818">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1725423739098976" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block collapsed="1" sid="6785970003479659">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="3508834714206836" type="System">
+                                            <param id="0" name="First value">mouse.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Street.X + 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="9606128223762092" type="HousePlacement">
+                                            <param id="0" name="X">street.X - 50</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="4467599360420303" type="HousePlacement">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3406432493762307">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="6861251361194074" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="3201506140198659" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="250964178020466">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="3581591486891608" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="312654968269823" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="1818170516348365">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="6935874732226746" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="2826917441937239" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="258773282688093" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">Street.X - 50</param>
+                                                            <param id="3" name="Y">mouse.y</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="9875474719493506" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="3905809950767906" type="House">
+                                                            <param id="0" name="Animation">&quot;Sideways&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block collapsed="1" sid="1770153920952576">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="4198142245824706" type="System">
+                                            <param id="0" name="First value">mouse.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Street.X + 25</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="3233911080626099" type="HousePlacement">
+                                            <param id="0" name="X">street.X + 100</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="278519809035233" type="HousePlacement">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="5846766797634713">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="299889575638249" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="8563247425810279" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9181908198268418">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="4347372416868516" type="HousePlacement">
+                                                    <param id="0" name="Object">House</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="6350635592551659" type="HousePlacement">
+                                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="9369300361314057">
+                                                    <conditions>
+                                                        <condition id="6" name="On object clicked" sid="6727635538125581" type="Mouse">
+                                                            <param id="0" name="Mouse button">0</param>
+                                                            <param id="1" name="Click type">0</param>
+                                                            <param id="2" name="Object clicked">Street</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="8797698177057616" type="HousePlacement" />
+                                                        <action id="-3" name="Create object" sid="6447028290921716" type="System">
+                                                            <param id="0" name="Object to create">House</param>
+                                                            <param id="1" name="Layer">0</param>
+                                                            <param id="2" name="X">Street.X + 100</param>
+                                                            <param id="3" name="Y">mouse.y</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="7960969347323488" type="System">
+                                                            <param id="0" name="Variable">Mode</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="1811157734858413" type="House">
+                                                            <param id="0" name="Animation">&quot;Other&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8037697720120698">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="8908730854709953" type="Mouse">
+                            <param id="0" name="Object">Street</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4799558413842877" type="HousePlacement">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

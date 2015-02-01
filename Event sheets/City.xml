@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>City</name>
+    <events>
+        <include>House</include>
+        <include>Street</include>
+        <variable constant="0" name="Mode" sid="9772116829116448" static="0" type="text">idle</variable>
+        <event-block sid="9569914358872901">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4216984872084367" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9277566961334433" type="StreetDesigner" />
+                <action id="-9" name="Destroy" sid="7305903427565119" type="StreetStart" />
+            </actions>
+        </event-block>
+        <event-block sid="9784311955748998">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2725270951014919" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1751873876937489" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">&quot;street&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6522191404226366" type="HousePlacement" />
+            </actions>
+        </event-block>
+        <event-block sid="1770504115657478">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3254143328125695" type="Keyboard">
+                    <param id="0" name="Key">72 (H)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7767198850542472" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">&quot;house1&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="51017114029793" type="StreetDesigner" />
+                <action id="-9" name="Destroy" sid="4349047278792549" type="StreetStart" />
+            </actions>
+        </event-block>
+        <event-block sid="4855773868833249">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="8131422171442875" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3733086057798539" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">&quot;dozer&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1027829760220814" type="HousePlacement" />
+                <action id="-9" name="Destroy" sid="6897106581740067" type="StreetDesigner" />
+                <action id="-9" name="Destroy" sid="5205170189527563" type="StreetStart" />
+            </actions>
+        </event-block>
+        <event-block sid="7446320685029718">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="1501635696640039" type="Keyboard">
+                    <param id="0" name="Key">73 (I)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3283000566880257" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">&quot;idle&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="3020097472642508" type="HousePlacement" />
+                <action id="-9" name="Destroy" sid="2618980333246683" type="StreetDesigner" />
+                <action id="-9" name="Destroy" sid="1125155279130765" type="StreetStart" />
+            </actions>
+        </event-block>
+        <event-block sid="7276679663534149">
+            <conditions>
+                <condition id="-24" name="For Each (ordered)" sid="2421849007908234" type="System">
+                    <param id="0" name="Object">IsoObject</param>
+                    <param id="1" name="Expression">IsoObject.X</param>
+                    <param id="2" name="Order">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" sid="2962043227668378" type="IsoObject" />
+            </actions>
+        </event-block>
+        <event-block collapsed="1" sid="2115021866573757">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2508929263053529" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;dozer&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6183587991744727">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="4758742813074794" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">House</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3673100041678806" type="House" />
+                        <action id="-9" name="Set value" sid="2736765274607658" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;idle&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4478620756985055">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="9322049618179134" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Street</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6451490207097724" type="Street" />
+                        <action id="-9" name="Set value" sid="9911082078514141" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;idle&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

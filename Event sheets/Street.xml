@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Street</name>
+    <events>
+        <event-block sid="6824986292734096">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3903580746123182" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;street&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9241784736164986">
+                    <conditions>
+                        <condition id="0" name="On click" sid="8279949359746178" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9065460316545231" type="System">
+                            <param id="0" name="Object to create">StreetDesigner</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3276043371633268">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="4926076172044603" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="9793901180093683" type="StreetDesigner">
+                            <param id="0" name="Width">distance(StreetDesigner.X, StreetDesigner.Y, Mouse.X,Mouse.Y)</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="2191045906049411" type="StreetDesigner">
+                            <param id="0" name="Angle">round(angle(StreetDesigner.X, StreetDesigner.Y, Mouse.X, Mouse.Y) / 90) * 90</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8546134624612517">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="138612759486894" type="StreetDesigner">
+                                    <param id="0" name="Object">House</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5331046649623986" type="StreetDesigner">
+                                    <param id="0" name="Animation">&quot;Blocked&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6424536728837561">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="2003375852366525" type="StreetDesigner">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="8873932073287815" type="StreetDesigner">
+                                    <param id="0" name="Object">House</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="955975819302245" type="StreetDesigner">
+                                    <param id="0" name="Animation">&quot;Working&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3468374449621969">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="5197992040371919" type="StreetDesigner">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5377629943128676">
+                                    <conditions>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="7820544409920818" type="StreetStart">
+                                            <param id="0" name="Object">Street</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="6496023364224724" type="StreetDesigner">
+                                            <param id="0" name="Animation">&quot;Blocked&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7802002761750642">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9705681887129281" type="StreetDesigner">
+                                            <param id="0" name="Object">House</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="1311941678879014" type="StreetStart">
+                                            <param id="0" name="Object">Street</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="7417401324894275" type="StreetDesigner">
+                                            <param id="0" name="Animation">&quot;Blocked&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9197597414020995">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9661249656419677" type="StreetStart">
+                                            <param id="0" name="Object">Street</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="7931946349145355" type="StreetDesigner">
+                                            <param id="0" name="Object">House</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="5465591741468841" type="StreetDesigner">
+                                            <param id="0" name="Animation">&quot;Working&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6147202266852599">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="9084803563700168" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8063938298115892" type="StreetDesigner" />
+                        <action id="-9" name="Destroy" sid="9623119217555823" type="StreetStart" />
+                        <action id="-9" name="Set value" sid="1180436334454899" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;idle&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="248369554800127">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="2190270544999894" type="StreetDesigner">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="8641707359502141" type="StreetDesigner">
+                                    <param id="0" name="Object">House</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="8888774830452426" type="StreetDesigner">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="4650164456665814" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="2917175571231025" type="Street">
+                                    <param id="0" name="Width">distance(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="1407858746525792" type="Street">
+                                    <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 90) * 90</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Right SIDEWAYS</comment>
+                                <event-block any="1" sid="4237932226069611">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="2009719859060296" type="Street">
+                                            <param id="0" name="First angle">-1</param>
+                                            <param id="1" name="Second angle">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="7137814249442274" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="2883596609566651" type="Street">
+                                            <param id="0" name="X">Street.X</param>
+                                            <param id="1" name="Y">Street.Y - 25</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Left SIDEWAYS</comment>
+                                <event-block sid="5963993924593525">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="5983523787897294" type="Street">
+                                            <param id="0" name="First angle">179</param>
+                                            <param id="1" name="Second angle">181</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="242125899720529" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="747733559876206" type="Street">
+                                            <param id="0" name="X">Street.X</param>
+                                            <param id="1" name="Y">Street.Y + 25</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Up VERTICAL</comment>
+                                <event-block sid="8788779841992557">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="3181739775031418" type="Street">
+                                            <param id="0" name="First angle">269</param>
+                                            <param id="1" name="Second angle">271</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5970026513347857" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="7430065627860367" type="Street">
+                                            <param id="0" name="X">Street.X - 25</param>
+                                            <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Down VERTICAL</comment>
+                                <event-block any="1" sid="6591600409456375">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="8362583222144044" type="Street">
+                                            <param id="0" name="First angle">89</param>
+                                            <param id="1" name="Second angle">91</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="4866390696253016" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="2263958168596351" type="Street">
+                                            <param id="0" name="X">Street.X + 25</param>
+                                            <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="7995671341588216">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="112397419183279" type="StreetDesigner">
+                                    <param id="0" name="Object">House</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="1080635481916241" type="StreetDesigner">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="3339467100201151" type="StreetDesigner">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="3751547401149631" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="3639668425164367" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="2715401066158877" type="Street">
+                                    <param id="0" name="Width">distance(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="6037606518803411" type="Street">
+                                    <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 45) * 45</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Right SIDEWAYS</comment>
+                                <event-block any="1" sid="1470711205848344">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="5962550847465328" type="Street">
+                                            <param id="0" name="First angle">-1</param>
+                                            <param id="1" name="Second angle">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="6546214872899488" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="7055343337043713" type="Street">
+                                            <param id="0" name="X">Street.X</param>
+                                            <param id="1" name="Y">Street.Y - 25</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Left SIDEWAYS</comment>
+                                <event-block sid="4884276944888983">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="1249260032676358" type="Street">
+                                            <param id="0" name="First angle">179</param>
+                                            <param id="1" name="Second angle">181</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5489719980754488" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="145215847137374" type="Street">
+                                            <param id="0" name="X">Street.X</param>
+                                            <param id="1" name="Y">Street.Y + 25</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Up VERTICAL</comment>
+                                <event-block sid="2661720663834373">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="7043200737306368" type="Street">
+                                            <param id="0" name="First angle">269</param>
+                                            <param id="1" name="Second angle">271</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9464797224016717" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="8669298380085513" type="Street">
+                                            <param id="0" name="X">Street.X - 25</param>
+                                            <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Down VERTICAL</comment>
+                                <event-block any="1" sid="1136397216264432">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="2095019874694589" type="Street">
+                                            <param id="0" name="First angle">89</param>
+                                            <param id="1" name="Second angle">91</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5704730666633049" type="Street">
+                                            <param id="0" name="Instance variable">Orientation</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="6784786739959571" type="Street">
+                                            <param id="0" name="X">Street.X + 25</param>
+                                            <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="347053293780388">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="4415021275599837" type="Mouse">
+                            <param id="0" name="Object">Street</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Mouse button is down" sid="8574867858245515" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="6000159705817416" type="StreetStart">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9917149346814203">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="6767849068795137" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="6328668534496151" type="System">
+                                    <param id="0" name="Object to create">StreetStart</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Mouse.X</param>
+                                    <param id="3" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7987168710107887">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1925518941808662" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1973651047516269" type="StreetStart">
+                                    <param id="0" name="X">mouse.X</param>
+                                    <param id="1" name="Y">street.Y + 25</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9780643928666793">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5790416844754711" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="9750277499034537" type="StreetStart">
+                                    <param id="0" name="X">street.X - 25</param>
+                                    <param id="1" name="Y">mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6998215532391244">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9410117079761911" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1130905498225566" type="StreetStart">
+                                    <param id="0" name="X">mouse.X</param>
+                                    <param id="1" name="Y">street.Y - 25</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5888395876300038">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2632341053788944" type="Street">
+                                    <param id="0" name="Instance variable">Orientation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="7846299143708684" type="StreetStart">
+                                    <param id="0" name="X">street.X + 25</param>
+                                    <param id="1" name="Y">mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8039613817496704">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="2247950881263269" type="Mouse">
+                            <param id="0" name="Object">Street</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Mouse button is down" sid="1429361554568941" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="6569671910890097" type="StreetStart">
+                            <param id="0" name="X">mouse.X</param>
+                            <param id="1" name="Y">mouse.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4074073959886067">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="4800580548638133" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8579964025737903" type="System">
+                                    <param id="0" name="Object to create">StreetStart</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Mouse.X</param>
+                                    <param id="3" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

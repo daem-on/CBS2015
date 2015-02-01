@@ -2,7 +2,7 @@
 <c2layout>
     <name>Layout 1</name>
     <sid>694130512690898</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>City</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -134,6 +134,26 @@
                         <depth>0</depth>
                         <hotspotX>0.472000003</hotspotX>
                         <hotspotY>0.54400003</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TiledBackground" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>861</width>
+                        <height>492</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
