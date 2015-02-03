@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>City Building Simulator 2015</name>
+    <name>Project Arcadium</name>
     <description></description>
     <version>1.0.0.0</version>
     <author>Daem_on</author>
@@ -415,6 +415,12 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Title" sid="7422894758853221">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Title2" sid="8779504288843072">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="IsoObject" plugin-id="Sprite" sid="7493461967933442">
@@ -426,12 +432,14 @@
     </families>
     <layout-folder expanded="1">
         <layout>City.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>City.xml</event-sheet>
         <event-sheet>Street.xml</event-sheet>
         <event-sheet>House.xml</event-sheet>
         <event-sheet>Computing.xml</event-sheet>
+        <event-sheet>Menu.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="11" />

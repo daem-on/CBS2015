@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <event-block sid="2592817709853668">
+            <conditions>
+                <condition id="1" name="On any click" sid="8259520449833469" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6706246858139317" type="System">
+                    <param id="0" name="Layout">City</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

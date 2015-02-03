@@ -89,7 +89,7 @@
                 <action id="-24" name="Move to top" sid="2962043227668378" type="IsoObject" />
             </actions>
         </event-block>
-        <event-block sid="2115021866573757">
+        <event-block collapsed="1" sid="2115021866573757">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="2508929263053529" type="System">
                     <param id="0" name="Variable">Mode</param>
@@ -202,134 +202,138 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="4340053013303529">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="714482266628121" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;house1&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="2063140449554104" type="MenuHouse">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="2864614537479559">
-            <conditions>
-                <condition id="-14" inverted="1" name="Compare variable" sid="7911784275869316" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;house1&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="7784652328772303" type="MenuHouse">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="7957402883803926">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="8238013842220357" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;street&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="8208400763623795" type="MenuStreet">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3522564782718074">
-            <conditions>
-                <condition id="-14" inverted="1" name="Compare variable" sid="6921869960648878" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;street&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="2090295136592652" type="MenuStreet">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6809326090691435">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="5528982695869171" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;dozer&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="1657387079683416" type="MenuDozer">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8689521388655861">
-            <conditions>
-                <condition id="-14" inverted="1" name="Compare variable" sid="4417756148662107" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;dozer&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="9818002205943299" type="MenuDozer">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5327253764326724">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="4606810828287437" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">MenuHouse</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="3907444705382371" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Value">&quot;house1&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5127914511360713">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="9879926654329516" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">MenuStreet</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="6342398807943678" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Value">&quot;street&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="7493056456034046">
-            <conditions>
-                <condition id="6" name="On object clicked" sid="2541276938106988" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">MenuDozer</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="3497632279312899" type="System">
-                    <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Value">&quot;dozer&quot;</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group collapsed="1" description="" sid="71391589597897" title="Modes">
+            <sub-events>
+                <event-block sid="4340053013303529">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="714482266628121" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;house1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2063140449554104" type="MenuHouse">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2864614537479559">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="7911784275869316" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;house1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="7784652328772303" type="MenuHouse">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7957402883803926">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8238013842220357" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;street&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="8208400763623795" type="MenuStreet">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3522564782718074">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="6921869960648878" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;street&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2090295136592652" type="MenuStreet">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6809326090691435">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5528982695869171" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;dozer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="1657387079683416" type="MenuDozer">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8689521388655861">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="4417756148662107" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;dozer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9818002205943299" type="MenuDozer">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5327253764326724">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="4606810828287437" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">MenuHouse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3907444705382371" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;house1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5127914511360713">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="9879926654329516" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">MenuStreet</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6342398807943678" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;street&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7493056456034046">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="2541276938106988" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">MenuDozer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3497632279312899" type="System">
+                            <param id="0" name="Variable">Mode</param>
+                            <param id="1" name="Value">&quot;dozer&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

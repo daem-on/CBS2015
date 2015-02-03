@@ -11,7 +11,7 @@
             <actions>
                 <action id="-10" name="Add to" sid="176938317418597" type="System">
                     <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Value">500</param>
+                    <param id="1" name="Value">round(random(480, 510))</param>
                 </action>
             </actions>
         </event-block>
@@ -20,9 +20,24 @@
                 <condition id="-19" name="On destroyed" sid="385189166837174" type="House" />
             </conditions>
             <actions>
-                <action id="-11" name="Subtract from" sid="7904026734022163" type="System">
+                <action id="-10" name="Add to" sid="5615730450684237" type="System">
                     <param id="0" name="Variable">Mode</param>
-                    <param id="1" name="Value">500</param>
+                    <param id="1" name="Value">round(random(480, 510))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1571794501676123">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6383963002185143" type="System">
+                    <param id="0" name="Variable">Population</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5024461074533651" type="System">
+                    <param id="0" name="Variable">Population</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
