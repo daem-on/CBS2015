@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Computing</name>
+    <events>
+        <variable constant="0" name="Population" sid="908442668644634" static="0" type="number">0</variable>
+        <event-block any="1" sid="7987654020608399">
+            <conditions>
+                <condition id="-18" name="On created" sid="9256751669967749" type="House" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="176938317418597" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6043382395108869">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="385189166837174" type="House" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="7904026734022163" type="System">
+                    <param id="0" name="Variable">Mode</param>
+                    <param id="1" name="Value">500</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

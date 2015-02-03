@@ -38,6 +38,14 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="6581596485321291">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="7986373862352651" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="1006282051067916" type="HousePlacement" />
+                            </actions>
+                        </event-block>
                         <event-block collapsed="1" sid="7913734319491927">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="6097827151737034" type="Street">
@@ -48,7 +56,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block collapsed="1" sid="934086696501103">
+                                <event-block sid="934086696501103">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="1844230507927071" type="System">
                                             <param id="0" name="First value">mouse.Y</param>
@@ -66,7 +74,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="9386027291431734">
+                                        <event-block any="1" sid="9386027291431734">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="9575993140254458" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -78,6 +86,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="8871584299046935">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="4970123325730264" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="6412842224876907" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="8306519980789601">
                                             <conditions>
@@ -92,6 +110,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="6894833279915313">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="3841344337741879" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="4182398600976272" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="9627094068441458">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="5943201811496493" type="Mouse">
@@ -152,6 +178,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="7891628520998499">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="8660133859300148" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="4617651814918229" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="3576983617050854">
                                             <conditions>
@@ -166,6 +202,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="8633475698396234">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="786454248087553" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="6830826855070087" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="4559270117745771">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="6032108172941132" type="Mouse">
@@ -198,7 +242,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="1705901390264068">
+                        <event-block collapsed="1" sid="1705901390264068">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="5418024890885479" type="Street">
                                     <param id="0" name="Instance variable">Orientation</param>
@@ -219,14 +263,14 @@
                                     <actions>
                                         <action id="-3" name="Set position" sid="3759208056103384" type="HousePlacement">
                                             <param id="0" name="X">mouse.X</param>
-                                            <param id="1" name="Y">street.Y - 80</param>
+                                            <param id="1" name="Y">street.Y - 90</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="3861835503825143" type="HousePlacement">
                                             <param id="0" name="Frame number">0</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="4353730147349222">
+                                        <event-block any="1" sid="4353730147349222">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="2419512494536284" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -238,6 +282,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="6573293321448417">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="4298472445244276" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="6888159271325068" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="5005163183036528">
                                             <conditions>
@@ -252,6 +306,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="5019163645482277">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="7144324221690758" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="8389174076865943" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="5371912397723226">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="4971754204314456" type="Mouse">
@@ -266,7 +328,7 @@
                                                             <param id="0" name="Object to create">House</param>
                                                             <param id="1" name="Layer">0</param>
                                                             <param id="2" name="X">mouse.X</param>
-                                                            <param id="3" name="Y">street.Y - 80</param>
+                                                            <param id="3" name="Y">street.Y - 90</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="2536843776269191" type="System">
                                                             <param id="0" name="Variable">Mode</param>
@@ -300,7 +362,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="8979054527395426">
+                                        <event-block collapsed="1" sid="8979054527395426">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="1889372948596364" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -312,8 +374,18 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="1933560164334082">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="8950968911503717" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="367742125125205" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
-                                        <event-block sid="2587291927256401">
+                                        <event-block collapsed="1" sid="2587291927256401">
                                             <conditions>
                                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="2462956824883886" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -326,6 +398,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="9027900339274126">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="728667231369365" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="5731457548489615" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="4280158530842463">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="1992002433449108" type="Mouse">
@@ -368,7 +448,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block collapsed="1" sid="3120742249587627">
+                                <event-block sid="3120742249587627">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="642689280611111" type="System">
                                             <param id="0" name="First value">mouse.X</param>
@@ -386,7 +466,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="3661452502240648">
+                                        <event-block any="1" sid="3661452502240648">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="4354767751514006" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -398,6 +478,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="4925335330382864">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="5611920766037486" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="370871782685454" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="4755540873418095">
                                             <conditions>
@@ -412,6 +502,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="9522845354069243">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="7587284337370872" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="1779900264420513" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="3874804544196779">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="2995782200325421" type="Mouse">
@@ -442,7 +540,7 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block collapsed="1" sid="4457309586767287">
+                                <event-block sid="4457309586767287">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="2868508487834906" type="System">
                                             <param id="0" name="First value">mouse.X</param>
@@ -472,6 +570,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="8913077483584269">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="4568791154488755" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="8725831089011945" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="6660003116359339">
                                             <conditions>
@@ -486,6 +594,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="4482998648634963">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="8009022731736916" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="9182803271170163" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="7950515891957116">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="5464589079618485" type="Mouse">
@@ -528,7 +644,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block collapsed="1" sid="6785970003479659">
+                                <event-block sid="6785970003479659">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="3508834714206836" type="System">
                                             <param id="0" name="First value">mouse.X</param>
@@ -546,7 +662,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="3406432493762307">
+                                        <event-block any="1" sid="3406432493762307">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="6861251361194074" type="HousePlacement">
                                                     <param id="0" name="Object">House</param>
@@ -558,6 +674,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="7077709936583193">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="619458236668434" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="9266068242540585" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="250964178020466">
                                             <conditions>
@@ -572,6 +698,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="9144279893906373">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="8923457373776" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="8661240601188382" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="1818170516348365">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="6935874732226746" type="Mouse">
@@ -602,7 +736,7 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block collapsed="1" sid="1770153920952576">
+                                <event-block sid="1770153920952576">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="4198142245824706" type="System">
                                             <param id="0" name="First value">mouse.X</param>
@@ -632,6 +766,16 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="9606451915373374">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="4683983093502752" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="3029248756885804" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="9181908198268418">
                                             <conditions>
@@ -646,6 +790,14 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="4802610017104733">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="3800057557592411" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Fade" id="0" name="Restart fade" sid="561223668952586" type="HousePlacement" />
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="9369300361314057">
                                                     <conditions>
                                                         <condition id="6" name="On object clicked" sid="6727635538125581" type="Mouse">

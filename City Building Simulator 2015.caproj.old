@@ -19,9 +19,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -74,11 +72,6 @@
         </object-type>
         <object-type name="StreetStart" sid="5508140206883714">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="712654610970505">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9965804011031022" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -116,10 +109,10 @@
                 <animation framecount="1" loop="0" name="Top" pingpong="0" repeatcount="1" repeatto="0" sid="8146437398597336" speed="0">
                     <frame duration="1" hotspotX="0.496" hotspotY="0.564">
                         <collision-poly>
-                            <point x="0" y="1" />
+                            <point x="0" y="0.9" />
                             <point x="0" y="0.688" />
                             <point x="1" y="0.684" />
-                            <point x="1" y="1" />
+                            <point x="1" y="0.896" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -146,8 +139,8 @@
                 <animation framecount="1" loop="0" name="Back" pingpong="0" repeatcount="1" repeatto="0" sid="2392553637698288" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0" y="0.468" />
-                            <point x="1" y="0.468" />
+                            <point x="0" y="0.524" />
+                            <point x="1" y="0.524" />
                             <point x="1" y="0.828" />
                             <point x="0" y="0.828" />
                         </collision-poly>
@@ -259,161 +252,6 @@
                     <behavior id="Anchor" />
                 </behavior-type>
             </behaviors>
-        </object-type>
-        <object-type name="Camera" sid="8402445090706107">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="ScrollTo" sid="4682989154776727">
-                    <behavior id="scrollto" />
-                </behavior-type>
-                <behavior-type name="8Direction" sid="8601457748534811">
-                    <behavior id="EightDir" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2067569385944004" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="End" sid="9139716603396523">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2917464107073434" speed="5">
-                    <frame duration="1" hotspotX="0.367647" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Crossroad" sid="3927184503228673">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6448115488299798" speed="5">
-                    <frame duration="1" hotspotX="0.511111" hotspotY="0.75" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Joint" sid="8905368402526046">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1494377610264539" speed="5">
-                    <frame duration="1" hotspotX="0.679487" hotspotY="0.662338">
-                        <collision-poly>
-                            <point x="1" y="0" />
-                            <point x="0" y="0" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="MenuStreet" sid="9976881649063705">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Anchor" sid="6466151779321673">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7167846396815505" speed="0">
-                    <frame duration="1" hotspotX="0.486772" hotspotY="0.486772">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.502645" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="MenuHouse" sid="9897644267981119">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Anchor" sid="7111668208991124">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2236967318147889" speed="0">
-                    <frame duration="1" hotspotX="0.486772" hotspotY="0.486772">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.502645" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="MenuDozer" sid="1351836759114406">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Anchor" sid="1512347126581293">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2519751162786638" speed="0">
-                    <frame duration="1" hotspotX="0.486772" hotspotY="0.486772">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.502645" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="0.148148" y="0.148148" />
-                            <point x="0.497355" y="0" />
-                            <point x="0.851852" y="0.148148" />
-                            <point x="1" y="0.497355" />
-                            <point x="0.851852" y="0.851852" />
-                            <point x="0.497355" y="0.994709" />
-                            <point x="0.148148" y="0.851852" />
-                            <point x="0" y="0.497355" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families>

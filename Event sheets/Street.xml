@@ -24,12 +24,12 @@
                         <action id="-3" name="Create object" sid="9065460316545231" type="System">
                             <param id="0" name="Object to create">StreetDesigner</param>
                             <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">Mouse.X</param>
-                            <param id="3" name="Y">Mouse.Y</param>
+                            <param id="2" name="X">StreetStart.X</param>
+                            <param id="3" name="Y">StreetStart.Y</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3276043371633268">
+                <event-block bookmark="1" collapsed="1" sid="3276043371633268">
                     <conditions>
                         <condition id="2" name="Mouse button is down" sid="4926076172044603" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
@@ -130,35 +130,67 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="6147202266852599">
+                <event-block collapsed="1" sid="321888725914125">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="2846249364230582" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="7608904851749334">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="9304257391935623" type="StreetDesigner">
+                                    <param id="0" name="Object">House</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="6780318226932029" type="StreetDesigner">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="1757450467627075" type="StreetDesigner" />
+                                <action id="-9" name="Destroy" sid="2974824251818116" type="StreetStart" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block bookmark="1" collapsed="1" sid="6147202266852599">
                     <conditions>
                         <condition id="3" name="On button released" sid="9084803563700168" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="8641707359502141" type="StreetDesigner">
+                            <param id="0" name="Object">House</param>
+                        </condition>
+                        <condition id="-5" name="Compare width" sid="8888774830452426" type="StreetDesigner">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Width">50</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="8063938298115892" type="StreetDesigner" />
-                        <action id="-9" name="Destroy" sid="9623119217555823" type="StreetStart" />
                         <action id="-9" name="Set value" sid="1180436334454899" type="System">
                             <param id="0" name="Variable">Mode</param>
                             <param id="1" name="Value">&quot;idle&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="248369554800127">
+                        <event-block collapsed="1" sid="248369554800127">
                             <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="5733754808655482" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="2190270544999894" type="StreetDesigner">
                                     <param id="0" name="Object">Street</param>
                                 </condition>
-                                <condition id="1" inverted="1" name="Is overlapping another object" sid="8641707359502141" type="StreetDesigner">
-                                    <param id="0" name="Object">House</param>
-                                </condition>
-                                <condition id="-5" name="Compare width" sid="8888774830452426" type="StreetDesigner">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Width">50</param>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="6064492257612168" type="StreetStart">
+                                    <param id="0" name="Object">End</param>
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="4450865948723297" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
                                 <action id="0" name="Spawn another object" sid="4650164456665814" type="StreetStart">
                                     <param id="0" name="Object">Street</param>
                                     <param id="1" name="Layer">0</param>
@@ -170,6 +202,8 @@
                                 <action id="-8" name="Set angle" sid="1407858746525792" type="Street">
                                     <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 90) * 90</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="2592058188714432" type="StreetDesigner" />
+                                <action id="-9" name="Destroy" sid="7070583625939559" type="StreetStart" />
                             </actions>
                             <sub-events>
                                 <comment>Right SIDEWAYS</comment>
@@ -188,6 +222,20 @@
                                         <action id="-3" name="Set position" sid="2883596609566651" type="Street">
                                             <param id="0" name="X">Street.X</param>
                                             <param id="1" name="Y">Street.Y - 25</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="3042335821009915" type="StreetStart">
+                                            <param id="0" name="Object">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="7208625016362004" type="End">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="4108546960530497" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">Mouse.X</param>
+                                            <param id="3" name="Y">street.y + 25</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -208,6 +256,20 @@
                                             <param id="0" name="X">Street.X</param>
                                             <param id="1" name="Y">Street.Y + 25</param>
                                         </action>
+                                        <action id="0" name="Spawn another object" sid="3484625411224052" type="StreetStart">
+                                            <param id="0" name="Object">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="7093670032775823" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">Mouse.X</param>
+                                            <param id="3" name="Y">street.y - 25</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="9138834640235587" type="End">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <comment>Up VERTICAL</comment>
@@ -226,6 +288,23 @@
                                         <action id="-3" name="Set position" sid="7430065627860367" type="Street">
                                             <param id="0" name="X">Street.X - 25</param>
                                             <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="9707488932994356" type="StreetStart">
+                                            <param id="0" name="Object">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="6158019560905884" type="End">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="965567118173414" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">street.X + 25</param>
+                                            <param id="3" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="4901823801526957" type="End">
+                                            <param id="0" name="Angle">- 90</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -246,23 +325,36 @@
                                             <param id="0" name="X">Street.X + 25</param>
                                             <param id="1" name="Y">Street.Y</param>
                                         </action>
+                                        <action id="0" name="Spawn another object" sid="6351027125019545" type="StreetStart">
+                                            <param id="0" name="Object">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="8179541989009247" type="End">
+                                            <param id="0" name="Angle">- 90</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="4254661749434016" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">street.X - 25</param>
+                                            <param id="3" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="9769359959834148" type="End">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
                         <event-block collapsed="1" sid="7995671341588216">
                             <conditions>
-                                <condition id="1" inverted="1" name="Is overlapping another object" sid="112397419183279" type="StreetDesigner">
-                                    <param id="0" name="Object">House</param>
-                                </condition>
-                                <condition id="-5" name="Compare width" sid="1080635481916241" type="StreetDesigner">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Width">50</param>
-                                </condition>
-                                <condition id="1" name="Is overlapping another object" sid="3339467100201151" type="StreetDesigner">
-                                    <param id="0" name="Object">Street</param>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="4480082014456861" type="StreetStart">
+                                    <param id="0" name="Object">End</param>
                                 </condition>
                                 <condition id="1" name="Is overlapping another object" sid="3751547401149631" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="4402520123362867" type="StreetDesigner">
                                     <param id="0" name="Object">Street</param>
                                 </condition>
                             </conditions>
@@ -276,8 +368,13 @@
                                     <param id="0" name="Width">distance(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y)</param>
                                 </action>
                                 <action id="-8" name="Set angle" sid="6037606518803411" type="Street">
-                                    <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 45) * 45</param>
+                                    <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 90) * 90</param>
                                 </action>
+                                <action id="-16" name="Wait" sid="9375648665159554" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="8063938298115892" type="StreetDesigner" />
+                                <action id="-9" name="Destroy" sid="9623119217555823" type="StreetStart" />
                             </actions>
                             <sub-events>
                                 <comment>Right SIDEWAYS</comment>
@@ -296,6 +393,20 @@
                                         <action id="-3" name="Set position" sid="7055343337043713" type="Street">
                                             <param id="0" name="X">Street.X</param>
                                             <param id="1" name="Y">Street.Y - 25</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="4338447908612183" type="StreetStart">
+                                            <param id="0" name="Object">Crossroad</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="5790463478830739" type="Crossroad">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="8270900338108437" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">mouse.X</param>
+                                            <param id="3" name="Y">street.Y + 25</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -316,6 +427,23 @@
                                             <param id="0" name="X">Street.X</param>
                                             <param id="1" name="Y">Street.Y + 25</param>
                                         </action>
+                                        <action id="0" name="Spawn another object" sid="5488985914250298" type="StreetStart">
+                                            <param id="0" name="Object">Crossroad</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="4296050635746068" type="Crossroad">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="3232675430276697" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">mouse.X</param>
+                                            <param id="3" name="Y">street.Y - 25</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="4760775064558849" type="End">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <comment>Up VERTICAL</comment>
@@ -334,6 +462,20 @@
                                         <action id="-3" name="Set position" sid="8669298380085513" type="Street">
                                             <param id="0" name="X">Street.X - 25</param>
                                             <param id="1" name="Y">Street.Y</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="704552928369652" type="StreetStart">
+                                            <param id="0" name="Object">Crossroad</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="3362515803491493" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">street.X + 25</param>
+                                            <param id="3" name="Y">Mouse.Y</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="2327594109569381" type="End">
+                                            <param id="0" name="Angle">- 90</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -354,13 +496,537 @@
                                             <param id="0" name="X">Street.X + 25</param>
                                             <param id="1" name="Y">Street.Y</param>
                                         </action>
+                                        <action id="0" name="Spawn another object" sid="8697171544599782" type="StreetStart">
+                                            <param id="0" name="Object">Crossroad</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="5006298832801465" type="Crossroad">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="5331389834605207" type="System">
+                                            <param id="0" name="Object to create">End</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">street.X - 25</param>
+                                            <param id="3" name="Y">Mouse.Y</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="8206469458262458" type="End">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
                                     </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="4619144052500391">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3547735562945559" type="StreetStart">
+                                    <param id="0" name="Object">End</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="221337778235995" type="StreetStart">
+                                    <param id="0" name="Object">Street</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="5009661557939192" type="Street">
+                                    <param id="0" name="Width">distance(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="9977762359247223" type="Street">
+                                    <param id="0" name="Angle">round(angle(StreetStart.X, StreetStart.Y, Mouse.X, Mouse.Y) / 90) * 90</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9259344552739475" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="752684218363441" type="StreetDesigner" />
+                                <action id="-9" name="Destroy" sid="6459338429193901" type="StreetStart" />
+                            </actions>
+                            <sub-events>
+                                <comment>Left</comment>
+                                <event-block collapsed="1" sid="8065615613100586">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="3603624827818032" type="End">
+                                            <param id="0" name="First angle">179</param>
+                                            <param id="1" name="Second angle">181</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Left SIDEWAYS</comment>
+                                        <event-block any="1" sid="4549674043016502">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="3656921078944337" type="Street">
+                                                    <param id="0" name="First angle">179</param>
+                                                    <param id="1" name="Second angle">181</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="2211876722797762" type="End" />
+                                                <action id="-10" name="Set value" sid="7927197093285397" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="6707037172345983" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y + 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="604744130463976" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">Street.Y - 25</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="3725073693770878" type="End">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Down VERTICAL</comment>
+                                        <event-block any="1" sid="9625443030770875">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="4290064290761795" type="Street">
+                                                    <param id="0" name="First angle">89</param>
+                                                    <param id="1" name="Second angle">91</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="1651967742212834" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="1345960820674034" type="Joint">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="7983616146352982" type="End" />
+                                                <action id="-10" name="Set value" sid="2054875912896641" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="3233364465589333" type="Street">
+                                                    <param id="0" name="X">Street.X + 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="240273467425468" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X - 25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="2644503869247363" type="End">
+                                                    <param id="0" name="Angle">90</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Up VERTICAL</comment>
+                                        <event-block any="1" sid="3175580288540611">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="9531982642598593" type="Street">
+                                                    <param id="0" name="First angle">269</param>
+                                                    <param id="1" name="Second angle">271</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="7330348116939103" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="6928289251641785" type="Joint">
+                                                    <param id="0" name="Angle">90</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="1567081655953992" type="End" />
+                                                <action id="-10" name="Set value" sid="6165613064705822" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="2124829581257258" type="Street">
+                                                    <param id="0" name="X">Street.X - 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="5396029719709068" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X + 25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="9665103253198906" type="End">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Right</comment>
+                                <event-block collapsed="1" sid="6692734485875446">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="6262453531897262" type="End">
+                                            <param id="0" name="First angle">-1</param>
+                                            <param id="1" name="Second angle">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Right SIDEWAYS</comment>
+                                        <event-block any="1" sid="1160229145916056">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="8401570836067465" type="Street">
+                                                    <param id="0" name="First angle">-1</param>
+                                                    <param id="1" name="Second angle">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="8880294061013354" type="End" />
+                                                <action id="-10" name="Set value" sid="1297417499591699" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="5398229304766895" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y - 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="6472891320801361" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">Street.Y + 25</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Down VERTICAL</comment>
+                                        <event-block any="1" sid="4374282345143866">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="2870795366683346" type="Street">
+                                                    <param id="0" name="First angle">89</param>
+                                                    <param id="1" name="Second angle">91</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="4338370333843582" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="2643644210225873" type="Joint">
+                                                    <param id="0" name="Angle">-90</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="317870085303264" type="End" />
+                                                <action id="-10" name="Set value" sid="2358350266867624" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="2634791371376591" type="Street">
+                                                    <param id="0" name="X">Street.X + 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="3436004868734668" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X - 25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="5003122194346539" type="End">
+                                                    <param id="0" name="Angle">90</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Up VERTICAL</comment>
+                                        <event-block any="1" sid="5506914647560453">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="8158119185945343" type="Street">
+                                                    <param id="0" name="First angle">269</param>
+                                                    <param id="1" name="Second angle">271</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="4537911733135237" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="5215001853479997" type="End" />
+                                                <action id="-10" name="Set value" sid="9728164853031857" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="6294911387385734" type="Street">
+                                                    <param id="0" name="X">Street.X - 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="7412867039823268" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X + 25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="2639935737704939" type="End">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Down</comment>
+                                <event-block collapsed="1" sid="5109568228655427">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="4766779273356321" type="End">
+                                            <param id="0" name="First angle">89</param>
+                                            <param id="1" name="Second angle">91</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Right SIDEWAYS</comment>
+                                        <event-block any="1" sid="929533247293287">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="5948782705003644" type="Street">
+                                                    <param id="0" name="First angle">-1</param>
+                                                    <param id="1" name="Second angle">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="3617653414478785" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="4883589609590944" type="Joint">
+                                                    <param id="0" name="Angle">90</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="5892597217764667" type="End" />
+                                                <action id="-10" name="Set value" sid="5584828376808587" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="445528978585058" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y - 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="2993343815183163" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">street.Y + 25</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Left SIDEWAYS</comment>
+                                        <event-block sid="5417652903298401">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="8535078463021155" type="Street">
+                                                    <param id="0" name="First angle">179</param>
+                                                    <param id="1" name="Second angle">181</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="914424289833341" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="2526235863887177" type="End" />
+                                                <action id="-10" name="Set value" sid="8638874498811864" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="2492606587877288" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y + 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="861648765684273" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">street.Y - 25</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="1066729911109536" type="End">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Down VERTICAL</comment>
+                                        <event-block any="1" sid="3964166535029831">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="1187058884388274" type="Street">
+                                                    <param id="0" name="First angle">89</param>
+                                                    <param id="1" name="Second angle">91</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="3073968059267773" type="End" />
+                                                <action id="-10" name="Set value" sid="4695243355683263" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="2229219700614708" type="Street">
+                                                    <param id="0" name="X">Street.X + 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="7399146067878421" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X - 25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="1662827569756155" type="End">
+                                                    <param id="0" name="Angle">90</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Up</comment>
+                                <event-block collapsed="1" sid="9653796527690926">
+                                    <conditions>
+                                        <condition id="-13" name="Is between angles" sid="6494233800440916" type="End">
+                                            <param id="0" name="First angle">269</param>
+                                            <param id="1" name="Second angle">271</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Up VERTICAL</comment>
+                                        <event-block any="1" sid="754127461696016">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="3522869886404469" type="Street">
+                                                    <param id="0" name="First angle">269</param>
+                                                    <param id="1" name="Second angle">271</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="3979568116894165" type="End" />
+                                                <action id="-10" name="Set value" sid="9879004086265921" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="8277107161491968" type="Street">
+                                                    <param id="0" name="X">Street.X - 25</param>
+                                                    <param id="1" name="Y">Street.Y</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="4257363844484734" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">street.X +25</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="6887163277066627" type="End">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Left SIDEWAYS</comment>
+                                        <event-block sid="2867542104675673">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="9476466860894765" type="Street">
+                                                    <param id="0" name="First angle">179</param>
+                                                    <param id="1" name="Second angle">181</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="5876948657740265" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="2509199032782884" type="End" />
+                                                <action id="-8" name="Set angle" sid="6217096260807181" type="Joint">
+                                                    <param id="0" name="Angle">-90</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="915888870394965" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="6625624966940828" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y + 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="7636146488702159" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">street.Y - 25</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="8362141020067776" type="End">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Right SIDEWAYS</comment>
+                                        <event-block any="1" sid="7297595198758989">
+                                            <conditions>
+                                                <condition id="-13" name="Is between angles" sid="2850101792940406" type="Street">
+                                                    <param id="0" name="First angle">-1</param>
+                                                    <param id="1" name="Second angle">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="4349676922970731" type="StreetStart">
+                                                    <param id="0" name="Object">Joint</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-8" name="Set angle" sid="7046668950401406" type="Joint">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="1168577003881789" type="End" />
+                                                <action id="-10" name="Set value" sid="8099366380571158" type="Street">
+                                                    <param id="0" name="Instance variable">Orientation</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="9276241059970898" type="Street">
+                                                    <param id="0" name="X">Street.X</param>
+                                                    <param id="1" name="Y">Street.Y - 25</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="3881699243649045" type="System">
+                                                    <param id="0" name="Object to create">End</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">mouse.X</param>
+                                                    <param id="3" name="Y">street.Y + 25</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="347053293780388">
+                <event-block collapsed="1" sid="8629667198496598">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="5005852078633954" type="Mouse">
+                            <param id="0" name="Object">End</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Mouse button is down" sid="3698096038965984" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="1843710429906467" type="StreetStart">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3747681218178295" type="StreetStart">
+                            <param id="0" name="X">End.X</param>
+                            <param id="1" name="Y">End.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5611017890495299">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="8299220486185359" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="8179651764778731" type="StreetStart" />
+                                <action id="-3" name="Create object" sid="721042199011316" type="System">
+                                    <param id="0" name="Object to create">StreetStart</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Mouse.X</param>
+                                    <param id="3" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block bookmark="1" collapsed="1" sid="347053293780388">
                     <conditions>
                         <condition id="7" name="Cursor is over object" sid="4415021275599837" type="Mouse">
                             <param id="0" name="Object">Street</param>
@@ -380,6 +1046,7 @@
                                 <condition id="-4" name="Trigger once while true" sid="6767849068795137" type="System" />
                             </conditions>
                             <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="3870499341564792" type="StreetStart" />
                                 <action id="-3" name="Create object" sid="6328668534496151" type="System">
                                     <param id="0" name="Object to create">StreetStart</param>
                                     <param id="1" name="Layer">0</param>
@@ -428,8 +1095,8 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="1130905498225566" type="StreetStart">
-                                    <param id="0" name="X">mouse.X</param>
-                                    <param id="1" name="Y">street.Y - 25</param>
+                                    <param id="0" name="X">street.X +25</param>
+                                    <param id="1" name="Y">mouse.Y</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -443,15 +1110,18 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="7846299143708684" type="StreetStart">
-                                    <param id="0" name="X">street.X + 25</param>
-                                    <param id="1" name="Y">mouse.Y</param>
+                                    <param id="0" name="X">mouse.X</param>
+                                    <param id="1" name="Y">street.Y - 25</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8039613817496704">
+                <event-block collapsed="1" sid="8039613817496704">
                     <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="3108465681794313" type="Mouse">
+                            <param id="0" name="Object">End</param>
+                        </condition>
                         <condition id="7" inverted="1" name="Cursor is over object" sid="2247950881263269" type="Mouse">
                             <param id="0" name="Object">Street</param>
                         </condition>
@@ -471,6 +1141,7 @@
                                 <condition id="-4" name="Trigger once while true" sid="4800580548638133" type="System" />
                             </conditions>
                             <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="2680340904723055" type="StreetStart" />
                                 <action id="-3" name="Create object" sid="8579964025737903" type="System">
                                     <param id="0" name="Object to create">StreetStart</param>
                                     <param id="1" name="Layer">0</param>
@@ -482,6 +1153,32 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="2466448656433563">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="2134852743511562" type="StreetStart">
+                    <param id="0" name="Object">House</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="726578409493901" type="StreetStart">
+                    <param id="0" name="Animation">&quot;Bad&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7085367124167808">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="7479577558239574" type="StreetStart">
+                    <param id="0" name="Object">House</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="3848644058955988" type="StreetStart">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
